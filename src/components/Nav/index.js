@@ -10,7 +10,7 @@ function Nav() {
 					<li><Link to='/about'>.about</Link></li>
 					<li><Link to='/portfolio'>.portfolio</Link></li>
 					<li><Link to='/contact'>.contact</Link></li>
-					<li>.resume</li>
+					<li><a href={require('../../assets/web-dev-resume.pdf')?.default} target='_blank'>.resume</a></li>
 				</ul>
 			</nav>
 		</header>
