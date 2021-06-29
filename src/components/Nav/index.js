@@ -1,14 +1,15 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 
 function Nav() {
 	return (
 		<header>
-			<h1>#glen</h1>
+			<h1><Link to='/'>#glen</Link></h1>
 			<nav>
 				<ul>
-					<li>.about</li>
-					<li>.projects</li>
-					<li>.contact</li>
+					<li><Link to='/about'>.about</Link></li>
+					<li><Link to='/portfolio'>.portfolio</Link></li>
+					<li><Link to='/contact'>.contact</Link></li>
 					<li>.resume</li>
 				</ul>
 			</nav>

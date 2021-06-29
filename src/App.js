@@ -4,18 +4,26 @@ import Footer from './components/Footer';
 import Portfolio from './components/Portfolio'
 import About from './components/About';
 import Contact from './components/Contact';
+import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 
 function App() {
   return (
-    <div>
-      <Nav />
-	  <main>
-		<About />
-		<Portfolio />
-		<Contact />
-	  </main>
-	  <Footer />
-    </div>
+    <Router>
+		<div>
+			<Nav />
+			<main>
+				<Switch>
+					<Route exact path='/about' component={About} />
+					<Route exact path='/portfolio' component={Portfolio} />
+					<Route exact path='/contact' component={Contact} />
+
+					<Route component={About} />
+				</Switch>
+			</main>
+			<Footer />
+		</div>
+	</Router>
+	
   );
 }
 
