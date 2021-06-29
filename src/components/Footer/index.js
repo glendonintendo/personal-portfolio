@@ -1,5 +1,4 @@
 import React from 'react';
-import MediaLink from '../MediaLink';
 
 function Footer() {
 	const media = [
@@ -30,7 +29,14 @@ function Footer() {
 			<section className='connect'>
 				<h2>Want to Connect?</h2>
 				<ul>
-					{media.map(medium => <MediaLink mediaData={medium} />)}
+					{media.map((medium, i) => (
+						<li key={i}>
+							<a href={medium.url}>
+								<i className={medium.icon}></i>
+								{medium.label}
+							</a>
+						</li>
+					))}
 				</ul>
 			</section>
 			<footer>
