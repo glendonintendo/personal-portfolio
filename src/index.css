@@ -11,3 +11,308 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+
+/* variable declarations and universal styles */
+:root {
+    --primary-color: #FDB833;
+    --secondary-color: #1F271B;
+    --tertiary-color: #5E948B;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: var(--primary-color);
+    font-family: 'Poppins', sans-serif;
+    color: var(--secondary-color);
+}
+
+/* styles for header section and navigation anchors */
+header {
+    background-color: var(--secondary-color);
+    color: var(--tertiary-color);
+    position: -webkit-sticky;
+    position: sticky;
+    top: 0;
+    z-index: 10;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    height: 15vw;
+    padding: 5px;
+}
+
+header h1 {
+    display: none;
+}
+
+header a, .projects a {
+    text-decoration: none;
+    color: var(--tertiary-color);
+}
+
+nav {
+    width: 100%;
+}
+
+nav ul {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    list-style: none;
+    margin: auto;
+}
+
+nav ul li {
+    font-size: 1.1rem;
+    font-weight: bold;
+    text-shadow: 5px 10px 15px rgba(0, 0, 0, .5);
+    padding: 0 5px;
+}
+
+header a:hover {
+    color: var(--primary-color);
+}
+
+.nav-anchor {
+    position: relative;
+    top: -15vw;
+}
+
+/* styles for about section */
+.about {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    align-items: flex-start;
+    padding: 2.5vw;
+}
+
+.profile-pic {
+    width: 50vw;
+    height: 50vw;
+    border-radius: 50%;
+    object-fit: cover;
+    object-position: 50% 20%;
+    border: 5px solid var(--secondary-color);
+}
+
+.about-text {
+    width: 85%;
+    border-left: 5px solid var(--secondary-color);
+    margin: 2.5vw auto;
+}
+
+.about-text h2 {
+    font-size: 1.5rem;
+}
+
+.about-text p {
+    font-size: 14px;
+}
+
+.about a {
+    text-decoration: none;
+    color: var(--secondary-color);
+    font-weight: bold;
+}
+
+.about a:hover {
+    color: var(--tertiary-color);
+}
+
+.about h2, .about p {
+    padding:  0 10px;
+}
+
+/* styles for project section */
+.projects {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    background-color: #fff;
+    padding: 2.5vw 0;
+}
+
+.flex-projects {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    width: 90%;
+}
+
+.project {
+    width: 45%;
+    margin: 2.5vw 0;
+}
+
+.project-title {
+    display: block;
+    text-align: left;
+}
+
+.project-title:hover {
+    font-style: italic;
+}
+
+.project-pic {
+    height: 25vh;
+    width: 100%;
+    object-fit: cover;
+    object-position: 50% 0%;
+    border: 2px solid var(--secondary-color);
+    border-radius: 5px;
+}
+
+.project-pic:hover {
+    opacity: .75;
+}
+
+.flex-projects article:first-child {
+    width: 100%;
+    margin-top: 0;
+}
+
+.flex-projects article:first-child img {
+    height: 35vh;
+}
+
+/* styles for contact section */
+.connect {
+    padding: 2.5vw 0;
+}
+
+.connect h2 {
+    display: block;
+    text-align: center;
+}
+
+.connect i {
+    padding-right: 5px;
+    display: inline;
+}
+
+.connect ul {
+    margin: auto;
+    display: flex;
+    justify-content: center;
+    list-style: none;
+    flex-wrap: wrap;
+}
+
+.connect ul li {
+    text-align: center;
+    min-width: 30%;
+    padding: 5px 0;
+}
+
+.connect a {
+    color: var(--secondary-color);
+    text-decoration: none;
+}
+
+.connect a:hover {
+    color: var(--tertiary-color);
+}
+
+/* styles for footer */
+footer {
+    height: 5vh;
+    background-color: var(--secondary-color);
+    display: flex;
+    justify-content: center;
+}
+
+footer p {
+    color: var(--tertiary-color);
+    font-size: .75em;
+    align-self: center;
+}
+
+/* media queries */
+@media screen and (min-width: 575px) {
+    header {
+        height: 10vw;
+    }
+    
+    nav ul li {
+        font-size: 1.5rem;
+    }
+
+    .nav-anchor {
+        top: -10vw;
+    }
+
+    .profile-pic {
+        width: 30vw;
+        height: 30vw;
+    }
+    
+    .about-text {
+        width: 60vw;
+        margin: 0 auto;
+    }
+
+    .connect ul {
+        justify-content: space-around;
+    }
+}
+
+@media screen and (min-width: 768px) { 
+    nav ul li {
+        font-size: 2.25rem;
+    }
+    
+    .about {
+        align-items: center;
+    }
+    
+    .about h2, .projects h2, .connect h2 {
+        font-size: 2.25rem;
+    }
+    
+    .about p, .connect ul {
+        font-size: 1.5rem;
+    }
+
+    .project-pic {
+        height: 40vh;
+    }
+    
+    .flex-projects article:first-child img {
+        height: 60vh;
+    }
+
+    .flex-projects h3 {
+        font-size: 30px;
+    }
+}
+
+@media screen and (min-width: 980px) {
+    footer p {
+        font-size: 1rem;
+    }
+}
+
+@media screen and (min-width: 1024px) {
+    header h1 {
+        display: block;
+        font-size: 3rem;
+        width: 40%;
+        padding-left: 20px;
+    }
+}
+
+@media screen and (min-width: 1280px) {
+    header {
+        height: 7.5vw;
+    }
+
+    .nav-anchor {
+        top: -7.5vw;
+    }
+}
