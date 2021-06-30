@@ -208,8 +208,33 @@ header a:hover {
 	padding: 5px 10px 5px 10px;
 }
 
+/* styles for resume section */
+.resume {
+	width: 80%;
+	margin: 0 auto;
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	padding: 30px 0 30px 0;
+}
 
+.resume .resume-link {
+	width: 40%;
+}
 
+.resume .proficiencies {
+	width: 60%;
+	border-left: 5px solid var(--secondary-color);
+	padding-left: 10px;
+}
+
+.proficiencies h2:nth-child(n+2) {
+	padding-top: 30px;
+}
+
+.resume p {
+	font-size: 1.5rem;
+}
 
 /* styles for connect section */
 .connect {
