@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { validateEmail } from '../../utils/helpers';
 
 function Contact() {
 	const [formState, setFormState] = useState({ name: '', email: '', message: ''});
@@ -8,21 +9,40 @@ function Contact() {
 	
 	function handleSubmit(e) {
 		e.preventDefault();
-		console.log(formState);
+		if (formState.name && formState.email && validateEmail(formState.email)) {
+			console.log(formState);
+			setFormState({ name: '', email: '', message:''});
+			setErrorMessage('Email successfully sent. I will get back to you as soon as possible!')
+		}
 	}
 
 	function handleBlur(e) {
+		if (e.target.name === 'email') {
+			const isValid = validateEmail(e.target.value);
+			if (!isValid) {
+				setErrorMessage('Your email is invalid');
+			} else {
+				setErrorMessage('');
+			}
+		} else {
+			if (!e.target.value.length) {
+				setErrorMessage(`Your ${e.target.name} is required.`);
+			} else {
+				setErrorMessage('');
+			}
+		}
 
+		if (!errorMessage) {
+			setFormState({ ...formState, [e.target.name]: e.target.value });
+		}
 	}
 
 	function handleChange(e) {
-		console.log(e.target.name);
+		setFormState({ ...formState, [e.target.name]: e.target.value })
 	}
 
 	return (
 		<section className='contact'>
-			<h1>Contact Me</h1>
-
 			<form id='contact-form' onSubmit={handleSubmit}>
 				<div>
 					<label htmlFor='name'>Name:</label>
@@ -31,7 +51,7 @@ function Contact() {
 						name='name'
 						placeholder='Your name'
 						id='form-name'
-						default={name}
+						value={name}
 						onChange={handleChange}
 						onBlur={handleBlur}
 					/>
@@ -44,7 +64,7 @@ function Contact() {
 						name='email'
 						placeholder='Your email'
 						id='form-email'
-						default={email}
+						value={email}
 						onChange={handleChange}
 						onBlur={handleBlur}
 					/>
@@ -57,7 +77,7 @@ function Contact() {
 						placeholder='Your message'
 						id='form-message'
 						rows='5'
-						default={message}
+						value={message}
 						onChange={handleChange}
 						onBlur={handleBlur}
 					/>

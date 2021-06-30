@@ -191,6 +191,27 @@ header a:hover {
 }
 
 /* styles for contact section */
+.contact {
+	width: 60%;
+	margin: 0 auto;
+	padding: 30px 0 30px 0;
+	font-size: 1.5rem;
+}
+
+.contact input, .contact textarea {
+	width: 100%;
+	font-size: 1.5rem;
+}
+
+.contact button {
+	font-size: 1.5rem;
+	padding: 5px 10px 5px 10px;
+}
+
+
+
+
+/* styles for connect section */
 .connect {
     padding: 2.5vw 0;
 	background-color: var(--tertiary-color);
