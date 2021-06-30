@@ -51,7 +51,7 @@ function Portfolio() {
 		<div className='flex-projects'>
 			{projects.map((project, i) => (
 				<article className='project' key={i}>
-					<a className='project-title' href={project.deployedUrl}><h3>{project.title}</h3></a>
+					<p><a className='italic-hover' href={project.deployedUrl}>{project.title}</a> - <a className='italic-hover' href={project.githubUrl}>source code</a></p>
 					<a href={project.deployedUrl}>
 						<img 
 							className='project-pic' 

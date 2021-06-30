@@ -30,6 +30,14 @@ body {
     color: var(--secondary-color);
 }
 
+a, a:visited {
+	color: inherit;
+}
+
+main {
+	background-color: var(--primary-color);
+}
+
 /* styles for header section and navigation anchors */
 header {
     background-color: var(--secondary-color);
@@ -93,7 +101,6 @@ header a:hover {
     flex-wrap: wrap;
     align-items: flex-start;
     padding: 2.5vw;
-	background-color: var(--primary-color);
 }
 
 .profile-pic {
@@ -134,20 +141,22 @@ header a:hover {
 }
 
 /* styles for project section */
-.projects {
-    display: flex;
-    justify-content: center;
-    flex-wrap: wrap;
-    padding: 2.5vw 0;
-	background-color: var(--primary-color);
+.project a {
+	text-decoration: none;
+}
+
+.project p {
+	color: var(--secondary-color);
+	font-weight: bold;
+	font-size: 1.5rem;
 }
 
 .flex-projects {
     display: flex;
     justify-content: space-between;
     flex-wrap: wrap;
-    width: 100%;
-	background-color: var(--primary-color);
+    width: 90%;
+	margin: 0 auto;
 }
 
 .project {
@@ -155,12 +164,7 @@ header a:hover {
     margin: 2.5vw 0;
 }
 
-.project-title {
-    display: block;
-    text-align: left;
-}
-
-.project-title:hover {
+.italic-hover:hover {
     font-style: italic;
 }
 
@@ -187,14 +191,6 @@ header a:hover {
 }
 
 /* styles for contact section */
-.contact {
-	background-color: var(--primary-color);
-}
-
-.resume {
-	background-color: var(--primary-color);
-}
-
 .connect {
     padding: 2.5vw 0;
 	background-color: var(--tertiary-color);
