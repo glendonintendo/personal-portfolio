@@ -3,11 +3,11 @@ import { Link, NavLink } from 'react-router-dom';
 
 function Nav() {
 	const checkActive = (match, location) => {
-		if (location.pathname !== '/portfolio' && location.pathname !== '/contact') {
+		if (location.pathname !== '/portfolio' && location.pathname !== '/contact' && location.pathname !== '/resume') {
 			return true;
-		} else {
-			return false;
 		}
+		
+		return false;
 	};
 	
 	return (
@@ -18,7 +18,7 @@ function Nav() {
 					<li><NavLink to='/about' activeClassName='nav-selected' isActive={checkActive}>.about</NavLink></li>
 					<li><NavLink to='/portfolio' activeClassName='nav-selected'>.portfolio</NavLink></li>
 					<li><NavLink to='/contact' activeClassName='nav-selected'>.contact</NavLink></li>
-					<li><a href={require('../../assets/web-dev-resume.pdf')?.default} target='_blank'>.resume</a></li>
+					<li><NavLink to='/resume' activeClassName='nav-selected'>.resume</NavLink></li>
 				</ul>
 			</nav>
 		</header>

@@ -93,6 +93,7 @@ header a:hover {
     flex-wrap: wrap;
     align-items: flex-start;
     padding: 2.5vw;
+	background-color: var(--primary-color);
 }
 
 .profile-pic {
@@ -138,13 +139,15 @@ header a:hover {
     justify-content: center;
     flex-wrap: wrap;
     padding: 2.5vw 0;
+	background-color: var(--primary-color);
 }
 
 .flex-projects {
     display: flex;
     justify-content: space-between;
     flex-wrap: wrap;
-    width: 90%;
+    width: 100%;
+	background-color: var(--primary-color);
 }
 
 .project {
@@ -184,9 +187,17 @@ header a:hover {
 }
 
 /* styles for contact section */
+.contact {
+	background-color: var(--primary-color);
+}
+
+.resume {
+	background-color: var(--primary-color);
+}
+
 .connect {
     padding: 2.5vw 0;
-	background-color: var(--primary-color);
+	background-color: var(--tertiary-color);
 }
 
 .connect h2 {
